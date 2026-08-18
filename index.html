@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PahadiSafar | Smart Uttarakhand Travel</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo-area">
+        <div class="logo-icon">
+            <i class="fa-solid fa-mountain-sun"></i>
+        </div>
+
+        <div>
+            <h2>PahadiSafar</h2>
+            <span>Explore. Plan. Travel Safely.</span>
+        </div>
+    </div>
+
+    <nav id="navMenu">
+        <a href="#home">Home</a>
+        <a href="#explore">Explore</a>
+        <a href="#planner">Plan Your Trip</a>
+        <a href="#safety">Safety</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="nav-plan-btn" onclick="scrollToPlanner()">
+        Plan My Trip
+    </button>
+
+    <button class="menu-btn" onclick="toggleMenu()">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <span class="hero-tag">
+            <i class="fa-solid fa-location-dot"></i>
+            Discover Uttarakhand
+        </span>
+
+        <h1>
+            Where Every Journey
+            Becomes a
+            <span>Mountain Story.</span>
+        </h1>
+
+        <p>
+            Discover Uttarakhand, plan smarter,
+            explore deeper and travel safer.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button class="primary-btn"
+                    onclick="document.getElementById('explore').scrollIntoView({behavior:'smooth'})">
+                Explore Destinations
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+            <button class="secondary-btn"
+                    onclick="scrollToPlanner()">
+                Plan My Trip
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SEARCH ================= -->
+
+<section class="search-section">
+
+    <div class="search-box">
+
+        <div class="search-title">
+            <span>Start your journey</span>
+            <h2>Where do you want to go?</h2>
+        </div>
+
+        <div class="search-input">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="text"
+                id="destinationSearch"
+                placeholder="Search destinations, treks, temples, cities..."
+                onkeyup="searchDestinations()"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EXPLORE ================= -->
+
+<section class="section" id="explore">
+
+    <div class="section-heading">
+
+        <div>
+            <span class="section-label">EXPLORE</span>
+
+            <h2>
+                Find Your
+                <span>Uttarakhand</span>
+            </h2>
+        </div>
+
+        <p>
+            From sacred temples to Himalayan adventures,
+            discover places that match your journey.
+        </p>
+
+    </div>
+
+
+    <!-- CATEGORY BUTTONS -->
+
+    <div class="categories">
+
+        <button class="category active"
+                onclick="filterCategory('all', this)">
+            All
+        </button>
+
+        <button class="category"
+                onclick="filterCategory('spiritual', this)">
+            Spiritual
+        </button>
+
+        <button class="category"
+                onclick="filterCategory('adventure', this)">
+            Adventure
+        </button>
+
+        <button class="category"
+                onclick="filterCategory('nature', this)">
+            Nature
+        </button>
+
+        <button class="category"
+                onclick="filterCategory('family', this)">
+            Family
+        </button>
+
+    </div>
+
+
+    <!-- DESTINATION CARDS -->
+
+    <div class="destination-grid" id="destinationGrid">
+
+        <!-- Kedarnath -->
+
+        <div class="destination-card"
+             data-category="spiritual adventure"
+             data-name="Kedarnath">
+
+            <div class="destination-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=900&q=80"
+                    alt="Kedarnath">
+
+                <span class="destination-badge">
+                    Spiritual
+                </span>
+
+            </div>
+
+            <div class="destination-content">
+
+                <h3>Kedarnath</h3>
+
+                <p>
+                    One of India's most revered Himalayan
+                    pilgrimage destinations.
+                </p>
+
+                <div class="destination-meta">
+
+                    <span>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Rudraprayag
+                    </span>
+
+                    <span>
+                        <i class="fa-regular fa-calendar"></i>
+                        Apr–Nov
+                    </span>
+
+                </div>
+
+                <button onclick="openDestination('Kedarnath')">
+                    Explore
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Rishikesh -->
+
+        <div class="destination-card"
+             data-category="adventure spiritual"
+             data-name="Rishikesh">
+
+            <div class="destination-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=900&q=80"
+                    alt="Rishikesh">
+
+                <span class="destination-badge">
+                    Adventure
+                </span>
+
+            </div>
+
+            <div class="destination-content">
+
+                <h3>Rishikesh</h3>
+
+                <p>
+                    Yoga, spirituality, rafting and
+                    unforgettable riverside experiences.
+                </p>
+
+                <div class="destination-meta">
+
+                    <span>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Dehradun
+                    </span>
+
+                    <span>
+                        <i class="fa-regular fa-calendar"></i>
+                        Year Round
+                    </span>
+
+                </div>
+
+                <button onclick="openDestination('Rishikesh')">
+                    Explore
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Auli -->
+
+        <div class="destination-card"
+             data-category="nature adventure family"
+             data-name="Auli">
+
+            <div class="destination-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1517825738774-7de9363ef735?auto=format&fit=crop&w=900&q=80"
+                    alt="Auli">
+
+                <span class="destination-badge">
+                    Nature
+                </span>
+
+            </div>
+
+            <div class="destination-content">
+
+                <h3>Auli</h3>
+
+                <p>
+                    Snow-covered slopes and spectacular
+                    Himalayan views.
+                </p>
+
+                <div class="destination-meta">
+
+                    <span>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Chamoli
+                    </span>
+
+                    <span>
+                        <i class="fa-regular fa-calendar"></i>
+                        Nov–Mar
+                    </span>
+
+                </div>
+
+                <button onclick="openDestination('Auli')">
+                    Explore
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Nainital -->
+
+        <div class="destination-card"
+             data-category="nature family"
+             data-name="Nainital">
+
+            <div class="destination-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=900&q=80"
+                    alt="Nainital">
+
+                <span class="destination-badge">
+                    Family
+                </span>
+
+            </div>
+
+            <div class="destination-content">
+
+                <h3>Nainital</h3>
+
+                <p>
+                    A peaceful lake town surrounded by
+                    beautiful Himalayan hills.
+                </p>
+
+                <div class="destination-meta">
+
+                    <span>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Nainital
+                    </span>
+
+                    <span>
+                        <i class="fa-regular fa-calendar"></i>
+                        Year Round
+                    </span>
+
+                </div>
+
+                <button onclick="openDestination('Nainital')">
+                    Explore
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Mussoorie -->
+
+        <div class="destination-card"
+             data-category="nature family"
+             data-name="Mussoorie">
+
+            <div class="destination-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1597074866923-dc0589150358?auto=format&fit=crop&w=900&q=80"
+                    alt="Mussoorie">
+
+                <span class="destination-badge">
+                    Nature
+                </span>
+
+            </div>
+
+            <div class="destination-content">
+
+                <h3>Mussoorie</h3>
+
+                <p>
+                    The Queen of Hills with waterfalls,
+                    viewpoints and mountain walks.
+                </p>
+
+                <div class="destination-meta">
+
+                    <span>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Dehradun
+                    </span>
+
+                    <span>
+                        <i class="fa-regular fa-calendar"></i>
+                        Year Round
+                    </span>
+
+                </div>
+
+                <button onclick="openDestination('Mussoorie')">
+                    Explore
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Badrinath -->
+
+        <div class="destination-card"
+             data-category="spiritual"
+             data-name="Badrinath">
+
+            <div class="destination-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1623059515307-1d3c7d0a2f12?auto=format&fit=crop&w=900&q=80"
+                    alt="Badrinath">
+
+                <span class="destination-badge">
+                    Spiritual
+                </span>
+
+            </div>
+
+            <div class="destination-content">
+
+                <h3>Badrinath</h3>
+
+                <p>
+                    A sacred Himalayan temple surrounded
+                    by dramatic mountain landscapes.
+                </p>
+
+                <div class="destination-meta">
+
+                    <span>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Chamoli
+                    </span>
+
+                    <span>
+                        <i class="fa-regular fa-calendar"></i>
+                        May–Nov
+                    </span>
+
+                </div>
+
+                <button onclick="openDestination('Badrinath')">
+                    Explore
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DESTINATION DETAILS MODAL ================= -->
+
+<div class="modal" id="destinationModal">
+
+    <div class="modal-content">
+
+        <button class="close-modal"
+                onclick="closeModal()">
+            ×
+        </button>
+
+        <div id="destinationDetails"></div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= TRIP PLANNER ================= -->
+
+<section class="planner-section" id="planner">
+
+    <div class="planner-container">
+
+        <div class="planner-heading">
+
+            <span class="section-label">
+                SMART TRIP PLANNER
+            </span>
+
+            <h2>
+                Build Your
+                <span>Perfect Journey</span>
+            </h2>
+
+            <p>
+                Tell us what you need and create a personalized
+                Uttarakhand travel plan.
+            </p>
+
+        </div>
+
+
+        <!-- PROGRESS -->
+
+        <div class="progress">
+
+            <div class="progress-step active">
+                <span>1</span>
+                Traveller
+            </div>
+
+            <div class="progress-line"></div>
+
+            <div class="progress-step">
+                <span>2</span>
+                Journey
+            </div>
+
+            <div class="progress-line"></div>
+
+            <div class="progress-step">
+                <span>3</span>
+                Budget
+            </div>
+
+        </div>
+
+
+        <!-- FORM -->
+
+        <form id="tripForm" onsubmit="generateTrip(event)">
+
+            <!-- STEP 1 -->
+
+            <div class="form-step active" id="step1">
+
+                <h3>Tell us about yourself</h3>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label>Full Name</label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            required
+                            placeholder="Your name">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Age</label>
+
+                        <input
+                            type="number"
+                            id="age"
+                            min="1"
+                            required
+                            placeholder="Age">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Number of Travellers</label>
+
+                        <input
+                            type="number"
+                            id="travellers"
+                            min="1"
+                            value="2"
+                            required>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Emergency Contact</label>
+
+                        <input
+                            type="tel"
+                            id="emergency"
+                            required
+                            placeholder="+91 XXXXX XXXXX">
+
+                    </div>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="primary-btn next-btn"
+                    onclick="nextStep(2)">
+
+                    Continue
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+
+            <!-- STEP 2 -->
+
+            <div class="form-step" id="step2">
+
+                <h3>Plan your journey</h3>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label>Destination</label>
+
+                        <select id="destination">
+
+                            <option value="Kedarnath">
+                                Kedarnath
+                            </option>
+
+                            <option value="Rishikesh">
+                                Rishikesh
+                            </option>
+
+                            <option value="Auli">
+                                Auli
+                            </option>
+
+                            <option value="Nainital">
+                                Nainital
+                            </option>
+
+                            <option value="Mussoorie">
+                                Mussoorie
+                            </option>
+
+                            <option value="Badrinath">
+                                Badrinath
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Starting Location</label>
+
+                        <input
+                            type="text"
+                            id="startLocation"
+                            value="Dehradun"
+                            required>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Travel Date</label>
+
+                        <input
+                            type="date"
+                            id="travelDate"
+                            required>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Return Date</label>
+
+                        <input
+                            type="date"
+                            id="returnDate"
+                            required>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Travel Type</label>
+
+                        <select id="travelType">
+
+                            <option>Solo</option>
+                            <option>Couple</option>
+                            <option>Family</option>
+                            <option selected>Friends</option>
+                            <option>Group</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-actions">
+
+                    <button
+                        type="button"
+                        class="back-btn"
+                        onclick="nextStep(1)">
+
+                        Back
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="primary-btn"
+                        onclick="nextStep(3)">
+
+                        Continue
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- STEP 3 -->
+
+            <div class="form-step" id="step3">
+
+                <h3>Choose your travel style</h3>
+
+                <p class="form-description">
+                    Select your approximate budget level.
+                </p>
+
+
+                <div class="budget-options">
+
+                    <label class="budget-card">
+
+                        <input
+                            type="radio"
+                            name="budget"
+                            value="budget"
+                            checked>
+
+                        <i class="fa-solid fa-wallet"></i>
+
+                        <strong>Budget</strong>
+
+                        <span>₹5,000 – ₹10,000/person</span>
+
+                    </label>
+
+
+                    <label class="budget-card">
+
+                        <input
+                            type="radio"
+                            name="budget"
+                            value="standard">
+
+                        <i class="fa-solid fa-star"></i>
+
+                        <strong>Standard</strong>
+
+                        <span>₹10,000 – ₹20,000/person</span>
+
+                    </label>
+
+
+                    <label class="budget-card">
+
+                        <input
+                            type="radio"
+                            name="budget"
+                            value="premium">
+
+                        <i class="fa-solid fa-gem"></i>
+
+                        <strong>Premium</strong>
+
+                        <span>₹20,000+/person</span>
+
+                    </label>
+
+                </div>
+
+
+                <div class="form-actions">
+
+                    <button
+                        type="button"
+                        class="back-btn"
+                        onclick="nextStep(2)">
+
+                        Back
+
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="primary-btn">
+
+                        Generate My Trip
+
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TRIP RESULT ================= -->
+
+<section class="trip-result" id="tripResult">
+
+    <div class="result-container">
+
+        <div class="success-icon">
+            <i class="fa-solid fa-check"></i>
+        </div>
+
+        <span class="section-label">
+            YOUR PERSONALIZED PLAN
+        </span>
+
+        <h2>Your Uttarakhand Trip</h2>
+
+        <div id="tripSummary"></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MAP ================= -->
+
+<section class="section map-section">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="section-label">
+                YOUR ROUTE
+            </span>
+
+            <h2>
+                Travel
+                <span>Smarter</span>
+            </h2>
+
+        </div>
+
+        <p>
+            See your route and discover important
+            places around your destination.
+        </p>
+
+    </div>
+
+
+    <div class="map-container">
+
+        <div class="map-placeholder">
+
+            <div class="map-route">
+
+                <div class="map-point start">
+                    <span></span>
+                    Dehradun
+                </div>
+
+                <div class="route-line"></div>
+
+                <div class="map-point destination">
+                    <span></span>
+                    Kedarnath
+                </div>
+
+            </div>
+
+            <div class="map-info">
+
+                <i class="fa-solid fa-map-location-dot"></i>
+
+                <h3>Your Route</h3>
+
+                <p>
+                    Google Maps integration can be
+                    connected here.
+                </p>
+
+                <button
+                    class="primary-btn"
+                    onclick="openGoogleMaps()">
+
+                    Open in Google Maps
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TRAVEL CONDITIONS ================= -->
+
+<section class="conditions-section">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="section-label">
+                TRAVEL CONDITIONS
+            </span>
+
+            <h2>
+                Know Before
+                <span>You Go</span>
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="condition-grid">
+
+        <div class="condition-card">
+
+            <div class="condition-icon">
+                <i class="fa-solid fa-cloud-sun"></i>
+            </div>
+
+            <div>
+
+                <span>Weather</span>
+
+                <h3>8°C – 16°C</h3>
+
+                <small>Partly cloudy</small>
+
+            </div>
+
+        </div>
+
+
+        <div class="condition-card">
+
+            <div class="condition-icon warning">
+                <i class="fa-solid fa-cloud-rain"></i>
+            </div>
+
+            <div>
+
+                <span>Rain Risk</span>
+
+                <h3>Moderate</h3>
+
+                <small>Carry rain protection</small>
+
+            </div>
+
+        </div>
+
+
+        <div class="condition-card">
+
+            <div class="condition-icon safe">
+                <i class="fa-solid fa-road"></i>
+            </div>
+
+            <div>
+
+                <span>Road Condition</span>
+
+                <h3>Normal</h3>
+
+                <small>Drive carefully</small>
+
+            </div>
+
+        </div>
+
+
+        <div class="condition-card">
+
+            <div class="condition-icon">
+                <i class="fa-solid fa-mountain"></i>
+            </div>
+
+            <div>
+
+                <span>Landslide Risk</span>
+
+                <h3>Low</h3>
+
+                <small>Based on demo data</small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <p class="demo-note">
+        <i class="fa-solid fa-circle-info"></i>
+        These values are demo data. Real-time weather,
+        road and disaster APIs can be integrated later.
+    </p>
+
+</section>
+
+
+<!-- ================= IOT SAFETY ================= -->
+
+<section class="iot-section" id="safety">
+
+    <div class="iot-content">
+
+        <span class="section-label">
+            SMART SAFETY
+        </span>
+
+        <h2>
+            Safety Beyond
+            <span>Technology</span>
+        </h2>
+
+        <p>
+            Our future IoT integration can connect
+            trekkers with emergency contacts through
+            a smart wearable or safety device.
+        </p>
+
+
+        <div class="iot-flow">
+
+            <div class="iot-node">
+
+                <i class="fa-solid fa-person-hiking"></i>
+
+                <span>Traveller</span>
+
+            </div>
+
+            <div class="iot-arrow">
+                →
+            </div>
+
+            <div class="iot-node">
+
+                <i class="fa-solid fa-microchip"></i>
+
+                <span>IoT Device</span>
+
+            </div>
+
+            <div class="iot-arrow">
+                →
+            </div>
+
+            <div class="iot-node">
+
+                <i class="fa-solid fa-globe"></i>
+
+                <span>Platform</span>
+
+            </div>
+
+            <div class="iot-arrow">
+                →
+            </div>
+
+            <div class="iot-node">
+
+                <i class="fa-solid fa-phone-volume"></i>
+
+                <span>Emergency Contact</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SENSOR DASHBOARD -->
+
+    <div class="iot-dashboard">
+
+        <div class="dashboard-header">
+
+            <div>
+
+                <span>DEVICE STATUS</span>
+
+                <h3>Smart Safety Device</h3>
+
+            </div>
+
+            <div class="online">
+                ● ONLINE
+            </div>
+
+        </div>
+
+
+        <div class="sensor-grid">
+
+            <div class="sensor">
+
+                <i class="fa-solid fa-location-crosshairs"></i>
+
+                <span>GPS</span>
+
+                <strong>Active</strong>
+
+            </div>
+
+            <div class="sensor">
+
+                <i class="fa-solid fa-temperature-half"></i>
+
+                <span>Temperature</span>
+
+                <strong>18°C</strong>
+
+            </div>
+
+            <div class="sensor">
+
+                <i class="fa-solid fa-person-falling"></i>
+
+                <span>Fall Detection</span>
+
+                <strong>Normal</strong>
+
+            </div>
+
+            <div class="sensor">
+
+                <i class="fa-solid fa-battery-three-quarters"></i>
+
+                <span>Battery</span>
+
+                <strong>87%</strong>
+
+            </div>
+
+        </div>
+
+
+        <button class="sos-btn" onclick="triggerSOS()">
+
+            <i class="fa-solid fa-triangle-exclamation"></i>
+
+            EMERGENCY SOS
+
+        </button>
+
+        <small class="sos-note">
+            Demo only — no emergency call is actually made.
+        </small>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="section about-section" id="about">
+
+    <div class="about-grid">
+
+        <div>
+
+            <span class="section-label">
+                ABOUT PAHADISAFAR
+            </span>
+
+            <h2>
+                Tourism Meets
+                <span>Smart Technology</span>
+            </h2>
+
+        </div>
+
+        <div>
+
+            <p>
+                PahadiSafar is a smart tourism concept
+                designed to bring destination discovery,
+                trip planning and traveller safety into
+                one platform.
+            </p>
+
+            <p>
+                The platform is designed with future
+                integration of IoT devices, live weather,
+                maps and emergency services.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer id="contact">
+
+    <div class="footer-main">
+
+        <div class="footer-brand">
+
+            <div class="logo-area">
+
+                <div class="logo-icon">
+                    <i class="fa-solid fa-mountain-sun"></i>
+                </div>
+
+                <div>
+                    <h2>PahadiSafar</h2>
+                    <span>Explore. Plan. Travel Safely.</span>
+                </div>
+
+            </div>
+
+            <p>
+                Explore Uttarakhand.
+                Travel responsibly.
+                Stay safe.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h4>Explore</h4>
+
+            <a href="#home">Home</a>
+            <a href="#explore">Destinations</a>
+            <a href="#planner">Plan Trip</a>
+            <a href="#safety">Safety</a>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h4>Contact</h4>
+
+            <a href="mailto:hello@pahadisafar.com">
+                hello@pahadisafar.com
+            </a>
+
+            <a href="tel:+919999999999">
+                +91 99999 99999
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 PahadiSafar
+        </span>
+
+        <span>
+            Made for the mountains.
+        </span>
+
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
